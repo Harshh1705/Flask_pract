@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>uploads</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type ="submit">
+    </form>
+    {% if success %}
+        <p>File "{{ filename }}" uploaded successfully!</p>
+        
+        {% if answer %}
+        <div class="insights">
+            <h2>Generated data</h2>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+</body>
+</html>
