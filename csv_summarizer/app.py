@@ -10,7 +10,7 @@ app = Flask(__name__)
 HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 if not HUGGINGFACE_API_TOKEN:
     raise ValueError("Please set the HUGGINGFACE_API_TOKEN environment variable")
-API_URL = "https://api-inference.huggingface.co/models/openai-community/gpt2"
+API_URL = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-Coder-32B-Instruct"
 HEADERS = {
     "Authorization": f"Bearer {HUGGINGFACE_API_TOKEN}",
     "Content-Type": "application/json"
@@ -26,7 +26,8 @@ def generate_data(csv_data):
 
     Dataset Details:
     {
-        [
+        
+[
   {
     "PatientId": 29872499824296,
     "AppointmentID": 5642903,
@@ -56,7 +57,7 @@ Respond in a clear, structured manner."""
     payload = {
         "inputs": prompt,
         "parameters": {
-            "max_new_tokens": 245,  
+            "max_new_tokens": 108,  
             "temperature": 0.7,
             "do_sample": True
         }
